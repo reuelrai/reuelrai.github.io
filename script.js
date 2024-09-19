@@ -116,3 +116,44 @@ codeXeno.addEventListener('mouseleave', function () {
     dots.style.display = 'inline-block'; // Show dots again
     realName.style.display = 'none'; // Hide real name
 });
+const hamburger = document.getElementById('hamburger');
+const navbarMenu = document.getElementById('navbarMenu');
+
+hamburger.addEventListener('click', () => {
+    navbarMenu.classList.toggle('visible'); // Toggle visibility of navbar
+});
+// Handle touch scrolling (for mobile devices)
+window.addEventListener('touchstart', handleTouchStart, false);
+window.addEventListener('touchmove', handleTouchMove, false);
+
+let xStart = null;
+
+function handleTouchStart(event) {
+    const firstTouch = event.touches[0];
+    xStart = firstTouch.clientX;
+}
+
+function handleTouchMove(event) {
+    if (!xStart) {
+        return;
+    }
+
+    let xEnd = event.touches[0].clientX;
+    let xDiff = xStart - xEnd;
+
+    if (xDiff > 0) {
+        // Swiping left (scrolling down)
+        if (currentSectionIndex < sections.length - 1) {
+            currentSectionIndex++;
+            showSection(currentSectionIndex);
+        }
+    } else {
+        // Swiping right (scrolling up)
+        if (currentSectionIndex > 0) {
+            currentSectionIndex--;
+            showSection(currentSectionIndex);
+        }
+    }
+
+    xStart = null; // Reset touch start position
+}
