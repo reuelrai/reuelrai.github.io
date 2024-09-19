@@ -340,7 +340,7 @@ p:hover #realName {
 /* Mobile navbar styling */
 @media (max-width: 768px) {
     .navbar {
-       margin-right: 35px; /* Add left padding to move the menu a bit more */
+       margin-right: 32px; /* Add left padding to move the menu a bit more */
     }
     .navbar ul {
         display: none; /* Hide the nav links */
