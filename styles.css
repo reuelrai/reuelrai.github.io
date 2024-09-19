@@ -339,9 +339,7 @@ p:hover #realName {
 
 /* Mobile navbar styling */
 @media (max-width: 768px) {
-    .navbar {
-       margin-right: 32px; /* Add left padding to move the menu a bit more */
-    }
+    
     .navbar ul {
         display: none; /* Hide the nav links */
         flex-direction: column; /* Stack vertically */
@@ -352,6 +350,7 @@ p:hover #realName {
         background-color: rgba(22,22,22,255);
         padding: 10px;
         z-index: 1000;
+        margin-left: 10px;
     }
 
     .navbar ul.visible {
@@ -360,6 +359,7 @@ p:hover #realName {
 
     .hamburger {
         display: flex; /* Show hamburger menu */
+        margin-right: 16px;
     }
 }
 @media (max-width: 768px) {
