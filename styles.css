@@ -129,33 +129,53 @@ button:active {
     margin-top: 20px;
 }
 
-/* Mobile responsiveness */
+/* Media queries for better responsiveness */
 @media (max-width: 768px) {
     .logo {
-        max-width: 150px; /* Smaller logo for mobile */
+        max-width: 150px;
     }
 
     button {
-        font-size: 18px; /* Smaller font for buttons */
+        font-size: 18px;
         padding: 8px 20px;
     }
 
-    .main-content {
-        padding: 10px; /* Smaller padding on mobile */
+    .navbar ul li {
+        margin-right: 15px; /* Adjust spacing between navbar items */
+    }
+
+    .navbar ul li a {
+        font-size: 16px; /* Smaller font for smaller screens */
+    }
+
+    .skills-icons i {
+        font-size: 40px; /* Adjust icon size for smaller screens */
     }
 }
 
-/* Extra small screens (less than 480px) */
 @media (max-width: 480px) {
     .logo {
-        max-width: 120px; /* Further reduce logo size */
+        max-width: 120px;
     }
 
     button {
-        font-size: 16px; /* Even smaller font for smaller screens */
+        font-size: 16px;
         padding: 6px 15px;
     }
+
+    .navbar ul li {
+        margin-right: 10px; /* Further reduce space between navbar items */
+    }
+
+    .navbar ul li a {
+        font-size: 14px; /* Further reduce font size for smaller screens */
+    }
+
+    .skills-icons i {
+        font-size: 30px; /* Adjust icon size further for small screens */
+    }
 }
+
 
 .main-content.visible {
     opacity: 1; /* Fully visible */
@@ -300,4 +320,66 @@ p:hover #realName {
 
 .skills-icons i:hover {
     transform: scale(1.2); /* Scale the icon slightly on hover */
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Mobile navbar styling */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; /* Hide the nav links */
+        flex-direction: column; /* Stack vertically */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(22,22,22,255);
+        padding: 10px;
+        z-index: 1000;
+    }
+
+    .navbar ul.visible {
+        display: flex; /* Show the menu when visible */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+    }
+}
+@media (max-width: 768px) {
+    .content-section h1 {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    .content-section p {
+        font-size: 16px; /* Adjust paragraph size */
+    }
+
+    .social-icons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-section h1 {
+        font-size: 20px; /* Further reduce heading size */
+    }
+
+    .content-section p {
+        font-size: 14px; /* Further reduce paragraph size */
+    }
 }
