@@ -1,153 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/logo.png" type="image/png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Re</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">R</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <title>Circular Preloader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="progress-container">
+            <svg class="progress-circle" width="300" height="300"> <!-- Increased size -->
+                <circle class="progress-background" cx="150" cy="150" r="120"></circle> <!-- Increased radius -->
+                <circle class="progress-bar" cx="150" cy="150" r="120"></circle> <!-- Increased radius -->
+            </svg>
+            <div class="progress-value" id="progressValue"></div>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </div>
+
+    <!-- Main Content (Initially Hidden) -->
+    <div class="container" style="display:none;">
+        <img src="cat.gif" alt="logo" class="logo"> <!-- Logo above the button -->
+        <button type="submit" id="submitButton">START</button>
+    </div>
+
+    <!-- Additional Content -->
+    <div id="mainContent" class="main-content" style="display:none;">
+        <div class="navbar">
+            <div class="site-logo"><img src="cat.gif" alt="logo" class="logo" width="100" height="75"></div>
+            <ul>
+                <li><a href="#" data-section="home">Home</a></li>
+                <li><a href="#" data-section="about">About</a></li>
+                <li><a href="#" data-section="projects">Projects</a></li>
+                <li><a href="#" data-section="contact">Contact</a></li>
+            </ul>
         </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/axr.png" alt="Xeno profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Reuel</h1>
-        <p class="section__text__p2">Front-End Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/reuel-rai-755507281/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/reuelrai'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/xra.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>1+ years <br />Front-End Developer</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Sc. Computer Science and Information Technology<br /></p>
-            </div>
-          </div>
-          <div class="text-container">
+        <!-- Content sections -->
+        <div id="home" class="content-section visible">
+            <h1>WELCOME TO MY PORTFOLIO</h1>
             <p>
-              Front-End Developer weaving the web with a palette of HTML, CSS, and JavaScript magic.
-              💻✨ #CodeCreator
+                <span class="code-name" id="codeName">Hello, I'm REUEL. A Front-End Developer<span class="dots">.</span></span>
+                <span class="real-name" id="realName">A professional bug writer<span class="dots">.</span></span> <!-- Initially hidden -->
             </p>
-          </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:reuelrai07@gmail.com">reuelrai07@gmail.com</a></p>
+        
+        <div id="about" class="content-section">
+            <h1>About Me</h1>
+            <p>Hi, I'm Reuel Rai, a Computer Science Major and an aspiring Front-End Developer.</p>
+            
+            <h1>Skills</h1>
+            <div class="skills-icons">
+                <i class="fab fa-html5"></i> <!-- HTML5 Icon -->
+                <i class="fab fa-css3-alt"></i> <!-- CSS3 Icon -->
+                <i class="fab fa-js-square"></i> <!-- JavaScript Icon -->
+                <i class="fab fa-react"></i> <!-- React Icon -->
+                
+            </div>
         </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/reuel-rai-755507281/">LinkedIn</a></p>
+        
+        <div id="projects" class="content-section">
+            <h1>My Projects</h1>
+            <p>No projects at the moment. Stay in touch for updates.</p>
         </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+        <div id="contact" class="content-section">
+            <h1>Contact</h1>
+            <!-- Social Media Links -->
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/reuelrai/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/reuelrai" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/reuel.rai/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100070259513221" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-facebook"></i></a>
+                
+            </div>
         </div>
-      </nav>
-      <p>Copyright &#169; 2023 X. All Rights Reserved.</p>
-    </footer>
+        
+    </div>
+    </div>
+    
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
