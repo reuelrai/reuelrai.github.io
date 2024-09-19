@@ -339,6 +339,9 @@ p:hover #realName {
 
 /* Mobile navbar styling */
 @media (max-width: 768px) {
+    .navbar {
+        padding-left: 2px; /* Add left padding to move the menu a bit more */
+    }
     .navbar ul {
         display: none; /* Hide the nav links */
         flex-direction: column; /* Stack vertically */
