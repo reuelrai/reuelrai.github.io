@@ -6,6 +6,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -21,68 +24,53 @@
             <div class="progress-value" id="progressValue"></div>
         </div>
     </div>
+    
 
     <!-- Main Content (Initially Hidden) -->
     <div class="container" style="display:none;">
-        <img src="cat.gif" alt="logo" class="logo"> <!-- Logo above the button -->
-        <button type="submit" id="submitButton">START</button>
+        <img src="catz.gif" alt="logo" class="logo" width="170" height="130"> <!-- Logo above the button -->
+        <button type="submit" id="submitButton" aria-label="Start the portfolio">START</button>
+
     </div>
 
     <!-- Additional Content -->
     <div id="mainContent" class="main-content" style="display:none;">
+        <!-- Social Media Links Fixed on Left Side -->
+        <div class="social-icons-left">
+            <a href="https://www.linkedin.com/in/reuelrai/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/reuelrai" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/reuel.rai/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100070259513221" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-facebook"></i></a>
+        </div>
+
         <div class="navbar">
-            <div class="site-logo"><img src="cat.gif" alt="logo" class="logo" width="100" height="75"></div>
+            <div class="site-logo"><img src="catz.gif" alt="logo" class="logo" width="120" height="90" loading="lazy">
+            </div>
             <div class="hamburger" id="hamburger">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
             <ul id="navbarMenu">
-                <li><a href="#" data-section="home">Home</a></li>
-                <li><a href="#" data-section="about">About</a></li>
-                <li><a href="#" data-section="projects">Projects</a></li>
-                <li><a href="#" data-section="contact">Contact</a></li>
+                <li><a href="#" data-section="about">ABOUT</a></li>
+                <li><a href="#" data-section="projects">PROJECTS</a></li>
             </ul>
         </div>
         
         <!-- Content sections -->
         <div id="home" class="content-section visible">
-            <h1>WELCOME TO MY PORTFOLIO</h1>
+            <h4>REUEL RAI</h4>
             <p>
-                <span class="code-name" id="codeName">Hello, I'm REUEL. A Front-End Developer<span class="dots">.</span></span>
-                <span class="real-name" id="realName">A professional bug writer<span class="dots">.</span></span> <!-- Initially hidden -->
+                <span class="code-name" id="codeName">A<br>FRONT-END<br>DEVELOPER<span class="dots">.</span><br>SINCE<br>2024</span>
+                <span class="real-name" id="realName">A<br>PROFESSIONAL<br>BUG WRITER<span class="dots">.</span><br>SINCE<br>2024</br></span> <!-- Initially hidden -->
             </p>
-        </div>
-        
-        <div id="about" class="content-section">
-            <h1>About Me</h1>
-            <p>Hi, I'm Reuel Rai, a Computer Science Major and an aspiring Front-End Developer.</p>
-            
-            <h1>Skills</h1>
-            <div class="skills-icons">
-                <i class="fab fa-html5"></i> <!-- HTML5 Icon -->
-                <i class="fab fa-css3-alt"></i> <!-- CSS3 Icon -->
-                <i class="fab fa-js-square"></i> <!-- JavaScript Icon -->
-                <i class="fab fa-react"></i> <!-- React Icon -->
-                
-            </div>
         </div>
         
         <div id="projects" class="content-section">
             <h1>My Projects</h1>
             <p>No projects at the moment. Stay in touch for updates.</p>
         </div>
-        <div id="contact" class="content-section">
-            <h1>Contact</h1>
-            <!-- Social Media Links -->
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/reuelrai/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/reuelrai" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/reuel.rai/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=100070259513221" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-facebook"></i></a>
-                
-            </div>
-        </div>
+        
         
     </div>
     </div>
