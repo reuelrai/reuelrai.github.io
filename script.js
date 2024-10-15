@@ -39,10 +39,12 @@ const progressInterval = setInterval(updateProgress, intervalDuration);
 
 // Automatically hide the preloader once the window loads completely
 window.onload = function () {
-    // Ensure progress goes to 100%
-    progress = 100; 
-    updateProgress(); // Finalize UI once page loads
+    setTimeout(() => {
+        progress = 100; // Ensure progress is 100% even on fast loads
+        updateProgress();
+    }, 100); // Small delay for smooth load
 };
+
 
 // Add an event listener to the START button
 startButton.addEventListener('click', function() {
@@ -54,7 +56,7 @@ startButton.addEventListener('click', function() {
         mainContent.style.display = 'flex'; // Set display to flex
         setTimeout(() => {
             mainContent.classList.add('visible'); // Add the class to trigger the fade-in
-        }, 10); // Small delay to allow transition
+        }, 200); // Small delay to allow transition
     }
 });
 
@@ -79,49 +81,42 @@ function showSection(index) {
 const navLinks = document.querySelectorAll('.navbar ul li a');
 navLinks.forEach((link, index) => {
     link.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent default anchor behavior
-        currentSectionIndex = index; // Update the current section index
-        showSection(currentSectionIndex); // Show the corresponding section
+        event.preventDefault();
+        currentSectionIndex = index;
+        showSection(currentSectionIndex);
+        navbarMenu.classList.remove('visible'); // Close the menu on click
     });
 });
 
+
 // Handle mouse wheel scrolling
+let lastScrollTime = 0;
 window.addEventListener('wheel', (event) => {
+    const now = new Date().getTime();
+    if (now - lastScrollTime < 100) return; // Limit to one scroll event every 100ms
+
+    lastScrollTime = now;
     if (event.deltaY > 0) {
-        // Scrolling down
         if (currentSectionIndex < sections.length - 1) {
-            currentSectionIndex++; // Move to the next section
+            currentSectionIndex++;
             showSection(currentSectionIndex);
         }
     } else {
-        // Scrolling up
         if (currentSectionIndex > 0) {
-            currentSectionIndex--; // Move to the previous section
+            currentSectionIndex--;
             showSection(currentSectionIndex);
         }
     }
 });
 
-const codeXeno = document.querySelector('#home p');
-const realName = document.getElementById('realName');
-const dots = document.querySelector('.dots');
-
-codeXeno.addEventListener('mouseenter', function () {
-    dots.style.display = 'none'; // Hide dots
-    realName.style.display = 'inline-block'; // Show real name
-    realName.style.opacity = '1'; // Optional: Fade-in effect can be added here
-});
-
-codeXeno.addEventListener('mouseleave', function () {
-    dots.style.display = 'inline-block'; // Show dots again
-    realName.style.display = 'none'; // Hide real name
-});
 const hamburger = document.getElementById('hamburger');
 const navbarMenu = document.getElementById('navbarMenu');
 
 hamburger.addEventListener('click', () => {
-    navbarMenu.classList.toggle('visible'); // Toggle visibility of navbar
+    navbarMenu.classList.toggle('visible');
+    hamburger.classList.toggle('active'); // Add a class that rotates the hamburger icon
 });
+
 // Handle touch scrolling (for mobile devices)
 window.addEventListener('touchstart', handleTouchStart, false);
 window.addEventListener('touchmove', handleTouchMove, false);
@@ -134,26 +129,30 @@ function handleTouchStart(event) {
 }
 
 function handleTouchMove(event) {
-    if (!xStart) {
-        return;
-    }
+    if (!xStart) return;
+    event.preventDefault(); // Prevent default touch scrolling behavior
 
     let xEnd = event.touches[0].clientX;
     let xDiff = xStart - xEnd;
 
-    if (xDiff > 0) {
-        // Swiping left (scrolling down)
-        if (currentSectionIndex < sections.length - 1) {
-            currentSectionIndex++;
-            showSection(currentSectionIndex);
-        }
-    } else {
-        // Swiping right (scrolling up)
-        if (currentSectionIndex > 0) {
-            currentSectionIndex--;
-            showSection(currentSectionIndex);
-        }
+    if (Math.abs(xDiff) > 50) { // Threshold to prevent small movements
+    if (xDiff > 0 && currentSectionIndex < sections.length - 1) {
+        currentSectionIndex++;
+    } else if (xDiff < 0 && currentSectionIndex > 0) {
+        currentSectionIndex--;
     }
+    showSection(currentSectionIndex);
+    }
+    xStart = null; // Reset after swipe detection
 
-    xStart = null; // Reset touch start position
 }
+
+// Close the menu when clicking outside of it
+document.addEventListener('click', (event) => {
+    const isClickInsideMenu = navbarMenu.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnHamburger && navbarMenu.classList.contains('visible')) {
+        navbarMenu.classList.remove('visible'); // Close the menu
+    }
+});
