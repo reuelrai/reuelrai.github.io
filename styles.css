@@ -1,3 +1,4 @@
+
 /* Preloader container */
 #preloader {
     position: fixed;
@@ -5,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(22,22,22,255); /* Black background for preloader */
+    background-color: rgba(16,16,16,255); /* Black background for preloader */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +17,7 @@
 
 #preloader.hidden {
     opacity: 0; /* Fade out opacity */
-    transform: scale(1.3); /* Scale up slightly for effect */
+    transform: scale(1.5); /* Scale up slightly for effect */
 }
 
 
@@ -52,7 +53,7 @@
 }
 
 body {
-    background-color: rgba(22,22,22,255);
+    background-color: rgba(16,16,16,255);
 }
 
 .container {
@@ -61,7 +62,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(22,22,22,255); /* Black background for main content */
+    background-color: rgba(16,16,16,255); /* Black background for main content */
     display: none; /* Ensure content is hidden initially */
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center items vertically */
@@ -79,20 +80,20 @@ body {
 }
 
 button {
-    padding: 10px 30px;
-    font-size: 25px;
+    padding: 5px 25px;
+    font-size: 20px;
     cursor: pointer;
-    background: linear-gradient(90deg, rgba(22,22,22,255), rgba(22,22,22,255));
+    background: linear-gradient(90deg, rgba(16,16,16,255), rgba(16,16,16,255));
     color: white;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: background 0.3s, transform 0.3s;
-    font-family: 'Pixelify Sans', cursive;
+    font-family: 'Pixelify Sans', sans-serif;
     letter-spacing: 3px;
 }
 
 button:hover {
-    background: linear-gradient(90deg, #545454, rgba(22,22,22,255));
+    background: linear-gradient(90deg, #545454, rgba(16,16,16,255));
     transform: translateY(-3px);
 }
 
@@ -104,7 +105,7 @@ button:active {
 .main-content {
     text-align: center;
     color: white;
-    background-color: rgba(22,22,22,255); /* Solid black background for the main content */
+    background-color: rgba(16,16,16,255); /* Solid black background for the main content */
     position: fixed;
     top: 0;
     left: 0;
@@ -132,7 +133,8 @@ button:active {
 /* Media queries for better responsiveness */
 @media (max-width: 768px) {
     .logo {
-        max-width: 150px;
+        max-width: 170px;
+        max-height: 130px;
     }
 
     button {
@@ -155,7 +157,8 @@ button:active {
 
 @media (max-width: 480px) {
     .logo {
-        max-width: 120px;
+        max-width: 170px;
+        max-height: 130px;
     }
 
     button {
@@ -188,61 +191,66 @@ button:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(22,22,22,255); /* Dark background */
+    background-color: rgba(16,16,16,255); /* Dark background */
     padding: 15px 20px;
     margin: 5px 10px;
     color: white;
     width: 100%;
     position: absolute; /* Position navbar at the top */
     top: 0; /* Align to the top of the main content */
-    margin-top: -10px;
-    margin-right: 15px;
+    margin-top: -15px;
+    margin-right: 20px;
+
 }
 
 .navbar ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 20px;
+    padding: 10px;
     display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-end; /* Align items to the left */
 }
 
 .navbar ul li {
-    margin-right: 30px; /* Increased space between items */
-    font-size: 20px; /* Increased font size */
+    margin-bottom: 5px; /* Space between each item */
+    font-size: 20px; /* Font size */
 }
 
 .navbar ul li a {
     color: white;
     text-decoration: none;
-    font-family: 'Pixelify Sans', cursive; /* Updated font family */
-    font-size: 20px; /* Match the font size of the list items */
-    transition: text-decoration 0.3s ease; /* Smooth transition for underline */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px; /* Ensure font size is consistent */
+    transition: text-decoration 0.3s ease;
+    padding: 5px; /* Optional: Add padding to each link */
+    font-weight: bold;
 }
-
 
 .navbar ul li a:hover {
     text-decoration: underline;
 }
 
+
 .site-logo {
-    font-size: 24px;
-    font-weight: bold;
-    font-family: 'Pixelify Sans', sans-serif;
+    margin-left: 20px;
 }
 
 .content-section {
-    display: none; /* Initially hide all sections */
     opacity: 0; /* Start hidden */
-    transition: opacity 0.5s ease; /* Smooth transition for visibility */
-    font-family: 'Pixelify Sans', sans-serif;
+    display: none; /* Hidden initially */
+    transition: opacity 0.6s ease; /* Smooth transition for fading */
+    font-family: 'Alegreya', sans-serif;
     letter-spacing: 2px;
+    
+    
     
 }
 
 .content-section.visible {
     display: block; /* Show the section when visible */
     opacity: 1; /* Fully visible */
-    font-family: 'Pixelify Sans', sans-serif;
+    font-family: 'Alegreya', sans-serif;
 }
 
 .dots {
@@ -267,6 +275,8 @@ button:active {
 #codeName {
     display: inline-block; /* Ensure it's inline */
     transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+    font-size: 40px;
+    font-weight: bolder;
 }
 
 /* Style for the real name */
@@ -274,6 +284,8 @@ button:active {
     display: none; /* Initially hidden */
     opacity: 0; /* Fully transparent */
     transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+    font-size: 40px;
+    font-weight: bolder;
 }
 
 /* On hover, hide 'code: xeno' and show real name */
@@ -287,7 +299,7 @@ p:hover #realName {
 }
  /* Hide the dots when hovering */
 
- .social-icons {
+.social-icons {
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -341,16 +353,28 @@ p:hover #realName {
 @media (max-width: 768px) {
     
     .navbar ul {
-        display: none; /* Hide the nav links */
-        flex-direction: column; /* Stack vertically */
+        display: none; /* Hide the nav links initially */
+        flex-direction: column; /* Stack items vertically */
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
-        background-color: rgba(22,22,22,255);
+        background-color: rgba(16,16,16,255); /* Dark background */
         padding: 10px;
         z-index: 1000;
-        margin-left: 10px;
+        margin-left: 0px;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin-bottom: 10px; /* Add some space between each item */
+        font-size: 18px;
+         /* Adjust the font size for smaller screens */
+    }
+
+    .navbar ul li a {
+        font-size: 18px; /* Ensure the font size matches the list items */
+        padding: 10px; /* Add padding around each link for better tap targets */
     }
 
     .navbar ul.visible {
@@ -360,9 +384,8 @@ p:hover #realName {
     .hamburger {
         display: flex; /* Show hamburger menu */
         margin-right: 16px;
+        margin-top: -18px;
     }
-}
-@media (max-width: 768px) {
     .content-section h1 {
         font-size: 24px; /* Adjust heading size */
     }
@@ -375,6 +398,10 @@ p:hover #realName {
         flex-direction: column;
         gap: 10px;
     }
+    .site-logo {
+        margin-left: -10px;
+    }
+    
 }
 
 @media (max-width: 480px) {
@@ -386,3 +413,55 @@ p:hover #realName {
         font-size: 14px; /* Further reduce paragraph size */
     }
 }
+h4{
+    letter-spacing: 5px;
+}
+
+/* Position social icons vertically on the left side */
+.social-icons-left {
+    position: fixed; /* Keep icons in a fixed position on the screen */
+    left: 58px; /* Position the icons near the left edge */
+    top: 80%; /* Vertically center the icon container */
+    transform: translateY(-50%); /* Adjust for proper vertical centering */
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    gap: 20px; /* Space between the icons */
+    z-index: 1000; /* Ensure icons stay on top of other elements */
+}
+
+/* Styling for individual social icons */
+.social-icon {
+    color: white;
+    font-size: 20px; /* Adjust icon size */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #00acee; /* Change color on hover */
+    transform: scale(1.2); /* Slightly increase size on hover */
+}
+
+/* Mobile specific styling for social icons (bottom horizontally) */
+@media (max-width: 768px) {
+    .social-icons-left {
+        left: 0; /* Align icons to the bottom */
+        bottom: 20px; /* Position at the bottom */
+        top: unset; /* Unset the top positioning */
+        transform: unset; /* Remove transform */
+        flex-direction: row; /* Align icons horizontally */
+        justify-content: center; /* Center the icons horizontally */
+        gap: 20px; /* Adjust the gap between icons */
+        width: 100%; /* Full width to spread icons */
+    }
+}
+
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
