@@ -533,22 +533,3 @@ h4{
 .name-wrapper {
     transition: color 0.3s ease;
 }
-
-/* Media query for mobile devices */
-@media (max-width: 768px) { /* Targets screens with width 768px or less */
-    #codeName, #realName {
-        font-size: 1.6rem; /* Reduce font size on mobile */
-    }
-    .name-wrapper .default-name .hovered-name{
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 480px) { /* Even smaller screens like mobile phones */
-    #codeName, #realName {
-        font-size: 1.6rem; /* Further reduce the font size for smaller screens */
-    }
-    .name-wrapper .default-name .hovered-name{
-        font-size: 1.4rem;
-    }
-}
