@@ -539,7 +539,7 @@ h4{
     #codeName, #realName {
         font-size: 1.6rem; /* Reduce font size on mobile */
     }
-    .name-wrapper{
+    .name-wrapper .default-name .hovered-name{
         font-size: 1.4rem;
     }
 }
@@ -548,7 +548,7 @@ h4{
     #codeName, #realName {
         font-size: 1.6rem; /* Further reduce the font size for smaller screens */
     }
-    .name-wrapper{
+    .name-wrapper .default-name .hovered-name{
         font-size: 1.4rem;
     }
 }
