@@ -6,7 +6,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(16,16,16,255); /* Black background for preloader */
+    background-color: rgba(31,31,31,255)
+
+
+; /* Black background for preloader */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +56,10 @@
 }
 
 body {
-    background-color: rgba(16,16,16,255);
+    background-color: rgba(31,31,31,255)
+
+
+;
 }
 
 .container {
@@ -62,7 +68,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(16,16,16,255); /* Black background for main content */
+    background-color: rgba(31,31,31,255)
+
+
+; /* Black background for main content */
     display: none; /* Ensure content is hidden initially */
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center items vertically */
@@ -83,7 +92,13 @@ button {
     padding: 5px 25px;
     font-size: 20px;
     cursor: pointer;
-    background: linear-gradient(90deg, rgba(16,16,16,255), rgba(16,16,16,255));
+    background: linear-gradient(90deg, rgba(31,31,31,255)
+
+
+, rgba(31,31,31,255)
+
+
+);
     color: white;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -93,7 +108,10 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(90deg, #545454, rgba(16,16,16,255));
+    background: linear-gradient(90deg, #545454, rgba(31,31,31,255)
+
+
+);
     transform: translateY(-3px);
 }
 
@@ -105,7 +123,10 @@ button:active {
 .main-content {
     text-align: center;
     color: white;
-    background-color: rgba(16,16,16,255); /* Solid black background for the main content */
+    background-color: rgba(31,31,31,255)
+
+
+; /* Solid black background for the main content */
     position: fixed;
     top: 0;
     left: 0;
@@ -191,7 +212,10 @@ button:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(16,16,16,255); /* Dark background */
+    background-color: rgba(31,31,31,255)
+
+
+; /* Dark background */
     padding: 15px 20px;
     margin: 5px 10px;
     color: white;
@@ -359,7 +383,10 @@ p:hover #realName {
         top: 60px;
         left: 0;
         width: 100%;
-        background-color: rgba(16,16,16,255); /* Dark background */
+        background-color: rgba(31,31,31,255)
+
+
+; /* Dark background */
         padding: 10px;
         z-index: 1000;
         margin-left: 0px;
@@ -445,7 +472,7 @@ h4{
 @media (max-width: 768px) {
     .social-icons-left {
         left: 0; /* Align icons to the bottom */
-        bottom: 20px; /* Position at the bottom */
+        bottom: 60px; /* Position at the bottom */
         top: unset; /* Unset the top positioning */
         transform: unset; /* Remove transform */
         flex-direction: row; /* Align icons horizontally */
@@ -463,5 +490,47 @@ h4{
 }
 .hamburger.active div:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.content-section p {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-effect {
+    display: inline-block;  /* Make it inline-block for proper width */
+    position: relative;    /* Required for proper hover effect */
+    padding: 0 10px;       /* Add some padding to the text */
+    background-color: transparent; /* Initial state */
+    color: inherit;        /* Default text color */
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease; /* Transition for background, text color, shadow, and scale */
+}
+
+/* Hover Effect */
+.hover-effect:hover {
+    background-color: transparent; /* Background color on hover */
+    color: #fff; /* Text color when hovered */
+    text-shadow: 1px 1px 5px rgb(0, 0, 0); /* Text shadow for better contrast */
+    transform: scale(1.3); /* Slightly enlarge text on hover */
+}
+
+/* Default state */
+.name-wrapper .hovered-name {
+    display: none; /* Hidden by default */
+}
+
+/* Hover effect */
+.name-wrapper:hover .default-name {
+    display: none; /* Hide the default name when hovered */
+    
+}
+
+.name-wrapper:hover .hovered-name {
+    display: inline; /* Show the new name on hover */
+}
+
+/* Add transition if you want the text to change smoothly */
+.name-wrapper {
+    transition: color 0.3s ease;
 }
 
