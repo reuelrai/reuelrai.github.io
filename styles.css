@@ -537,12 +537,18 @@ h4{
 /* Media query for mobile devices */
 @media (max-width: 768px) { /* Targets screens with width 768px or less */
     #codeName, #realName {
-        font-size: 2.0rem; /* Reduce font size on mobile */
+        font-size: 1.8rem; /* Reduce font size on mobile */
+    }
+    .name-wrapper{
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 480px) { /* Even smaller screens like mobile phones */
     #codeName, #realName {
-        font-size: 2.0rem; /* Further reduce the font size for smaller screens */
+        font-size: 1.8rem; /* Further reduce the font size for smaller screens */
+    }
+    .name-wrapper{
+        font-size: 1.5rem;
     }
 }
