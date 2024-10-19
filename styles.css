@@ -534,8 +534,15 @@ h4{
     transition: color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .main-content .content-section.visible{
-        font-size: 10px;
+/* Media query for mobile devices */
+@media (max-width: 768px) { /* Targets screens with width 768px or less */
+    #codeName, #realName {
+        font-size: 2.0rem; /* Reduce font size on mobile */
+    }
+}
+
+@media (max-width: 480px) { /* Even smaller screens like mobile phones */
+    #codeName, #realName {
+        font-size: 2.0rem; /* Further reduce the font size for smaller screens */
     }
 }
