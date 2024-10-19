@@ -511,7 +511,7 @@ h4{
     background-color: transparent; /* Background color on hover */
     color: #fff; /* Text color when hovered */
     text-shadow: 1px 1px 5px rgb(0, 0, 0); /* Text shadow for better contrast */
-    transform: scale(1.3); /* Slightly enlarge text on hover */
+    transform: scale(1.2); /* Slightly enlarge text on hover */
 }
 
 /* Default state */
