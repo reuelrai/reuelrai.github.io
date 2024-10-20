@@ -533,19 +533,3 @@ h4{
 .name-wrapper {
     transition: color 0.3s ease;
 }
-
-/* On touch (mobile) enlarge the text */
-.name-wrapper:active, .code-name:active, .real-name:active {
-    font-size: 32px; /* size when touched */
-  }
-  
-  /* Media query for smaller devices */
-  @media (max-width: 768px) {
-    .name-wrapper, .code-name, .real-name {
-      font-size: 18px; /* smaller size for mobile */
-    }
-  
-    .name-wrapper:active, .code-name:active, .real-name:active {
-      font-size: 24px; /* touch enlarged size still within screen bounds */
-    }
-  }
