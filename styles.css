@@ -533,3 +533,13 @@ h4{
 .name-wrapper {
     transition: color 0.3s ease;
 }
+
+@media (max-width: 768px) {
+    .code-name, .real-name {
+      font-size: 12px; /* smaller size for mobile */
+    }
+  
+    .code-name:active, .real-name:active {
+      font-size: 18px; /* touch enlarged size still within screen bounds */
+    }
+  }
