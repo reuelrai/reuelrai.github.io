@@ -156,3 +156,5 @@ document.addEventListener('click', (event) => {
         navbarMenu.classList.remove('visible'); // Close the menu
     }
 });
+
+
