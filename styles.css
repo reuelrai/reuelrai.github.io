@@ -570,8 +570,6 @@ h4{
 .flying-icons i {
     font-size: 30px;  /* Adjust size of the icons */
     position: absolute;
-    animation: fly-around 10s infinite linear;
-
 }
 
 /* Different starting positions for each icon */
@@ -622,3 +620,4 @@ h4{
     50% { transform: translate(-250px, 100px) rotate(360deg); }
     100% { transform: translate(200px, -250px) rotate(-360deg); }
 }
+
