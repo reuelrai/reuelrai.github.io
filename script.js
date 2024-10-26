@@ -158,3 +158,45 @@ document.addEventListener('click', (event) => {
 });
 
 
+// Function to generate a random integer between min and max
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Function to create random keyframes for each icon
+function createRandomKeyframes(icon, index) {
+    const animationName = `fly-random-${index}`;
+
+    // Generate random values for position and rotation
+    const randomX1 = getRandomInt(-200, 200);
+    const randomY1 = getRandomInt(-200, 200);
+    const randomRotate1 = getRandomInt(-360, 360);
+
+    const randomX2 = getRandomInt(-200, 200);
+    const randomY2 = getRandomInt(-200, 200);
+    const randomRotate2 = getRandomInt(-360, 360);
+
+    // Create keyframes using random values
+    const keyframes = `
+        @keyframes ${animationName} {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(${randomX1}px, ${randomY1}px) rotate(${randomRotate1}deg); }
+            100% { transform: translate(${randomX2}px, ${randomY2}px) rotate(${randomRotate2}deg); }
+        }
+    `;
+
+    // Inject the keyframes into the document's stylesheet
+    const styleSheet = document.styleSheets[0];
+    styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+
+    // Apply the animation to the icon
+    icon.style.animation = `${animationName} ${getRandomInt(10, 20)}s infinite alternate ease-in-out`;
+}
+
+// Apply random keyframes to each icon
+document.addEventListener('DOMContentLoaded', () => {
+    const icons = document.querySelectorAll('.flying-icons i');
+    icons.forEach((icon, index) => {
+        createRandomKeyframes(icon, index);
+    });
+});
