@@ -621,3 +621,6 @@ h4{
     100% { transform: translate(200px, -250px) rotate(-360deg); }
 }
 
+.content-section{
+    color = #fff;
+}
