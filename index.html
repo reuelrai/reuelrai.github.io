@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <meta name="description" content="A portfolio showcasing my projects, skills, and contact details.">
+    <meta property="og:title" content="Reuel Rai's Portfolio">
+    <meta property="og:description" content="A portfolio showcasing my projects, skills, and contact details.">
+    <meta property="og:image" content="path/to/preview-image.jpg">
+    <meta property="og:url" content="https://example.com">
+    <title>ReuelRai</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="fav.png" type="image/png">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="progress-container">
+            <svg class="progress-circle" width="300" height="300"> <!-- Increased size -->
+                <circle class="progress-background" cx="150" cy="150" r="120"></circle> <!-- Increased radius -->
+                <circle class="progress-bar" cx="150" cy="150" r="120"></circle> <!-- Increased radius -->
+            </svg>
+            <div class="progress-value" id="progressValue"></div>
+        </div>
+    </div>
+
+    <!-- Main Content (Initially Hidden) -->
+    <div class="container" style="display:none;">
+        <img src="catlogo.gif" alt="logo" class="logo" width="170" height="130"> <!-- Logo above the button -->
+        <button type="submit" id="submitButton" aria-label="Start the portfolio">START</button>
+
+    </div>
+
+
+    <!-- Additional Content -->
+    <div id="mainContent" class="main-content" style="display:none;">
+        <div class="flying-icons">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-react"></i>
+        </div>
+        <!-- Social Media Links Fixed on Left Side -->
+        <div class="social-icons-left">
+            <a href="https://www.linkedin.com/in/reuelrai/" target="_blank" rel="noopener noreferrer"
+                class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/reuelrai" target="_blank" rel="noopener noreferrer" class="social-icon"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/reuel.rai/" target="_blank" rel="noopener noreferrer"
+                class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100070259513221" target="_blank" rel="noopener noreferrer"
+                class="social-icon"><i class="fab fa-facebook"></i></a>
+        </div>
+
+        <div class="navbar">
+            <div class="site-logo"><img src="catlogo.gif" alt="logo" class="logo" width="120" height="90"
+                    loading="lazy">
+            </div>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="navbarMenu">
+                <li><a href="#" data-section="about">ABOUT</a></li>
+                <li><a href="#" data-section="projects">PROJECTS</a></li>
+            </ul>
+        </div>
+
+        <!-- Content sections -->
+        <div id="home" class="content-section visible">
+            <h4>
+                <span class="name-wrapper">
+                    <span class="default-name">REUEL RAI</span>
+                    <span class="hovered-name">LOST.XENO</span>
+                </span>
+            </h4>
+            <p>
+                <span class="code-name" id="codeName">
+                    <span class="hover-effect">A</span><br>
+                    <span class="hover-effect">FRONT-END</span><br>
+                    <span class="hover-effect">DEVELOPER<span class="dots">.</span></span><br>
+                    <span class="hover-effect">SINCE</span><br>
+                    <span class="hover-effect">2024</span>
+                </span>
+                <span class="real-name" id="realName">
+                    <span class="hover-effect">A</span><br>
+                    <span class="hover-effect">PROFESSIONAL</span><br>
+                    <span class="hover-effect">BUG WRITER<span class="dots">.</span></span><br>
+                    <span class="hover-effect">SINCE</span><br>
+                    <span class="hover-effect">2024</span>
+                </span>
+            </p>
+        </div>
+
+
+        <div id="projects" class="content-section">
+            <h1>My Projects</h1>
+            <div class="projects">
+                <a href="https://clone-delta-creation.vercel.app/" target="_blank">Delta Creations Clone</a>
+                <p>A clone of the Delta Creations website, built with HTML, CSS/SASS, and JavaScript.</p>
+                <a href="https://github.com/reuelrai/Clone-Delta-Creation" target="_blank">Source Code</a>
+            </div>
+
+            <div class="projects">
+                <a href="https://class-popularity-pool-v3.vercel.app/" target="_blank">Popularity pool v3</a>
+                <p>A web application that allows users to vote for their favorite classes.
+                    Built with React,and Supabase for database.</p>
+                <a href="https://github.com/reuelrai/Class-Popularity-Pool-v3" target="_blank">Source Code</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
