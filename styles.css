@@ -767,7 +767,6 @@ h4 {
 
 
 #projects {
-    margin-top: 4rem;
     flex-direction: column;
     align-items: center;
     padding: 0 1rem; /* Safe horizontal padding */
@@ -823,7 +822,7 @@ h4 {
 /* Fix mobile overflow */
 @media (max-width: 600px) {
     .projects {
-        padding: 15px;
+        padding: 10px;
         width: 100%;
         max-width: 100%; /* Ensures it never exceeds screen width */
     }
